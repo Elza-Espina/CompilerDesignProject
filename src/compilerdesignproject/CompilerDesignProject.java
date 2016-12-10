@@ -48,7 +48,7 @@ public class CompilerDesignProject {
                 if(isWordTerminator(curChar)) //Check if current character is a terminator
                 {                    
                     if("if".equals(curWord) 
-                        || "while".equals(curWord) 
+                        || "while".equal(curWord) 
                         || "foreach".equals(curWord)){ //Check if current word is loop/condition keyword
                         
                         //Find for '(' disregarding whitespace

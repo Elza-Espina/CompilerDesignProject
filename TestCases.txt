@@ -1,0 +1,14 @@
+test cases 
+
+1. if ()(){}
+2. foreach(){{}}
+3. if (if(){}){}
+4. if (){}else{}else{}
+5. if (){}{}
+6. if (){ if{} }
+7. if (){ else{}}
+8. if (){ apple{}}
+9. if (){ banana(){}}
+1O. i()f{}
+11. el()se{}
+12. pig{}

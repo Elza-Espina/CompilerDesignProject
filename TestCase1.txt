@@ -1,0 +1,18 @@
+if ( dif == 2){
+	foreach (){
+
+		if(dif==2){
+		}else{ 
+		}
+	}
+else{
+	if(dif==2){
+	
+	if(dif==2){}
+
+		if(dif==2){}
+ 
+	}
+ else{}
+ 
+}

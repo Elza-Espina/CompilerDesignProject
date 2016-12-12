@@ -36,7 +36,7 @@ public class CompilerDesignProject {
     public static void main(String[] args) {
         // TODO code application logic here
         //srcCode is an array of string where each index represent one line in the source code string
-        ArrayList<String> srcCode = readTxtFile("C:\\Users\\davebaclayon\\Documents\\Dave\\CS148 Compiler Design\\CompilerDesignProject\\syntaxDraft.txt");
+        ArrayList<String> srcCode = readTxtFile("C:\\Users\\Aimee\\Documents\\NetBeansProjects\\CompilerDesignProject\\src\\compilerdesignproject\\syntaxDraft.txt");
         
         
         for(int lineNumber = 0; lineNumber<srcCode.size(); lineNumber++){//For each line
@@ -54,6 +54,9 @@ public class CompilerDesignProject {
                         //Find for '(' disregarding whitespace
                         //Terminates program if '(' is not next
                         checkIfOpenParenthesisIsNext(lineNumber, charNdx, curSrcCodeLine, curWord);
+                        
+                    }else if("else".equals(curWord)){ 
+                        checkElseExists(lineNumber, charNdx, curSrcCodeLine, curWord);
                     }
                     
                     
@@ -64,11 +67,9 @@ public class CompilerDesignProject {
                     if(curChar=='(' || curChar == '{'){
                         CharLineNumber cln = new CharLineNumber(curChar, lineNumber+1);
                         stack.push(cln);
-                    } else if (curChar == '}'){
-                        validatePoppedChar(curChar, lineNumber);
-                    } else if (curChar == ')'){
-                        validatePoppedChar(curChar,lineNumber);
-                    }
+                    } else if (curChar == '}' || curChar == ')' ){
+                        validatePoppedChar(curChar, lineNumber);    
+                    } 
                     
                     
                     /*
@@ -178,5 +179,30 @@ public class CompilerDesignProject {
         }
         
         return ret;
+    }
+    
+    /**
+     * Find for '{' disregarding whitespace
+     * Terminates program if '{' is not next
+     * @param lineNumber - current source code line number; used for printing the error
+     * @param charNdx - the current char ndx for the source code line string
+     * @param curSrcCodeLine  - the source code line string to be checked
+     */
+    private static void checkElseExists(int lineNumber, int charNdx, String curSrcCodeLine, String keyword){
+        //Keep traversing till you reach the end of the line or you encounter a non space character
+        int c = charNdx;
+        for (; c<curSrcCodeLine.length() && curSrcCodeLine.charAt(c)==' '; c++){}
+        //Check if you did not exceed the line and
+        //if the last character is an opening parenthesis
+        if(c<curSrcCodeLine.length() && curSrcCodeLine.charAt(c)=='{'){
+            //Do nothing
+            //System.out.println("Else exists!");
+        }else{
+            //Set the error message
+            String errorMsg = "Line number "+(lineNumber+1)+": \""+keyword+"\" should be followed by '{'";
+            System.out.println(errorMsg);
+            //Terminate program
+            System.exit(0);
+        }
     }
 }

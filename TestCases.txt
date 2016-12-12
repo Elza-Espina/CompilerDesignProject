@@ -1,14 +1,14 @@
 test cases 
 
-1. if ()(){}
-2. foreach(){{}}
-3. if (if(){}){}
-4. if (){}else{}else{}
-5. if (){}{}
-6. if (){ if{} }
-7. if (){ else{}}
-8. if (){ apple{}}
-9. if (){ banana(){}}
-1O. i()f{}
-11. el()se{}
-12. pig{}
+1. if ()(){}			- SolSet d
+2. foreach(){{}}		- SolSet a
+3. if (if(){}){}		- SolSet b.2 / Condition Problem
+4. if (){}else{}else{}		- SolSet c
+5. if (){}{}			- SolSet a	
+6. if (){ if{} }		- SolSet a
+7. if (){ else{}}		- SolSet c
+8. if (){ apple{}}		- SolSet a
+9. if (){ banana(){}}		- SolSet b.1
+1O. i()f{}			- SolSet a
+11. el()se{}			- SolSet a
+12. pig{}			- SolSet a

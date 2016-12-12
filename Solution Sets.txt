@@ -1,0 +1,22 @@
+
+Condition Problem - Elza
+	1. is called if there is an open parentheses. 
+	2. evaluates the condition as a whole when the stack of parentheses is already empty.
+	3. logic for syntax checking for conditions is Elza's algorithm	
+		- you set the limitations.
+		- you set what you can do.
+
+
+
+Solution Sets:
+
+a. The only thing that can precede an '{' is "else" and ')'
+b. Not our problem
+	1. function problem
+	2. too complicated
+c. An if-else stack
+	- push stack and determine what type.
+	- keep if open curly brace if, push
+	- if pop close curly brace if, then else is allowed/possible. else, reset the flag.
+d. The only thing that can precede an '(' is a keyword or not empty.
+	- just check if curWord is empty.
